@@ -201,3 +201,9 @@ p.copyright {
 	.widget-simplenav a{ margin:0 5px; }
 .contentuswash{color:#fff;}
 .carousel-caption{color:#fff;font-size: 50px}
+.bootbox{height: 100%;
+background: rgba(255, 255, 255,0.4);padding-top: 20px;float: left;width: 100%;margin-top: -110px;
+-webkit-border-radius: 25px;
+-moz-border-radius: 25px;
+border-radius: 25px;}
+ .bootbox a{color:#fff;text-shadow:2px 2px 10px #000000;text-decoration: none}
