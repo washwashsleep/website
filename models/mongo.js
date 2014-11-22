@@ -4,6 +4,6 @@ var user = db.collection('users');
 var test = db.collection('test');
 
 module.exports = {
-  user: user
+  user: user,
   test: test
 };
