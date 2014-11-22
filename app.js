@@ -28,8 +28,9 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.all('/', main.index);
-app.all('/signup', main.signup);
+app.all('/signup', multipartMiddleware, main.signup);
 app.all('/signin', multipartMiddleware, main.signin);
+app.all('/ticket', multipartMiddleware, main.ticket);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -44,6 +45,7 @@ app.use(function(req, res, next) {
 // will print stacktrace
 if (app.get('env') === 'development') {
     app.use(function(err, req, res, next) {
+        console.error(err)
         res.status(err.status || 500);
         res.render('error', {
             message: err.message,
