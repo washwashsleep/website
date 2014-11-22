@@ -15,6 +15,7 @@ var app = express();
 app.engine('html', swig.renderFile)
 app.set('view engine', 'html');
 app.set('views', __dirname + '/views');
+app.use(express.static(path.join(__dirname, '/public')));
 
 
 // uncomment after placing your favicon in /public
