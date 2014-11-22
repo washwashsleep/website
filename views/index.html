@@ -27,36 +27,43 @@
 
 <body>
 
-	<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
-  <!-- Brand and toggle get grouped for better mobile display -->
-  <div class="navbar-header">
-    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-      <span class="sr-only">Toggle navigation</span>
-      <span class="icon-bar"></span>
-      <span class="icon-bar"></span>
-      <span class="icon-bar"></span>
-    </button>
-    <a class="navbar-brand" href="#">洗洗睡搶票系統</a>
-  </div>
+    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">洗洗睡搶票系統</a>
+        </div>
 
-  <!-- Collect the nav links, forms, and other content for toggling -->
-  <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-    <ul class="nav navbar-nav navbar-right">
-      <li><a href="#" class="scroll-link" data-id="home">首頁</a></li>
-      <li><a href="#" class="scroll-link" data-id="about">關於我們</a></li>
-      <li><a href="#" class="scroll-link" data-id="services">服務項目</a></li>
-      <li><a href="#" class="scroll-link" data-id="contact">聯絡我們</a></li>
-      <li><a style="cursor:pointer;" id="loginpopup">登入 / 註冊</a></li>
-      <li class="dropdown">
-        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Hi <strong>Guest</strong> <b class="caret"></b></a>
-        <ul class="dropdown-menu">
-          <li><a href="#">我的個人資訊</a></li>
-          <li class="divider"></li>
-          <li><a href="#">登出</a></li>
-        </ul>
-      </li>
-    </ul>
-    <!--
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="#" class="scroll-link" data-id="home">首頁</a>
+                </li>
+                <li><a href="#" class="scroll-link" data-id="about">關於我們</a>
+                </li>
+                <li><a href="#" class="scroll-link" data-id="services">服務項目</a>
+                </li>
+                <li><a href="#" class="scroll-link" data-id="contact">聯絡我們</a>
+                </li>
+                <li><a style="cursor:pointer;" id="loginpopup">登入 / 註冊</a>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Hi <strong>Guest</strong> <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">我的個人資訊</a>
+                        </li>
+                        <li class="divider"></li>
+                        <li><a href="#">登出</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+            <!--
     <form class="navbar-form navbar-right" role="search">
       <div class="form-group">
         <input type="text" class="form-control" placeholder="Search">
@@ -64,108 +71,587 @@
       <button type="submit" class="btn btn-default">Submit</button>
     </form>
     -->
-  </div><!-- /.navbar-collapse -->
-  </nav>
-  <!-- Code for Login / Signup Popup -->
-  <!-- Modal Log in -->
-	<div class="modal fade" id="login" tabindex="-1" role="dialog" aria-labelledby="myModalLabel1" aria-hidden="true">
-	  <div class="modal-dialog" style="margin-top: 150px;">
-	    <div class="modal-content">
-	      <div class="modal-header">
-	        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-	        <h4 class="modal-title" id="myModalLabel1">登入洗洗睡搶票系統</h4>
-	      </div>
-	      <div class="modal-body" id="login_details">
-
-	        *<span style="font-weight:bold;">帳號</span><br />
-	        <input type="text" placeholder="example@gmail.com" name="login_email" /><br /></br>
-	        *<span style="font-weight:bold;" >密碼</span><br />
-	        <input type="password" placeholder="密碼" name="login_password" /><br />
-	      </div>
-	      <div class="modal-footer" >
-			<input style="float: left" type="button" class="btn btn-success" value="登入" />
-	       <span class="fp-link"> <a href="#">自己的密碼自己記?</a></span>
-	       </br></br>
-			<span>尚未加入洗洗睡?</span>
-			<span id="signup-link" style="cursor:pointer;" class="text-info">註冊!</span>
-	      </div>
-	    </div><!-- /.modal-content -->
-	  </div><!-- /.modal-dialog -->
-	</div><!-- /.modal -->
- <!--Modal Login Ends -->
- <!-- Modal Sign-up Starts -->
-	<div class="modal fade" id="signup" tabindex="-1" role="dialog" aria-labelledby="myModalLabel2" aria-hidden="true">
-	  <div class="modal-dialog" style="margin-top: 100px;">
-	    <div class="modal-content">
-	      <div class="modal-header">
-	        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-	        <h4 class="modal-title" id="myModalLabel2">註冊洗洗睡專屬帳號</h4>
-	      </div>
-	      <div class="modal-body" id="signup_details">
-	        <span >姓名</span>
-	        <input type="text" placeholder="姓名" name="register_name" /> </br></br>
-	        *<span >Email</span>
-	        <input type="text" placeholder="example@gmail.com" name="register_email" /></br></br>
-	        *<span >密碼</span>
-	        <input type="password" placeholder="密碼" name="register_password" /></br></br>
-	        *<span >再次確認密碼</span>
-	        <input type="password" placeholder="再輸入一次密碼" name="re_register_password" />
-	      </div>
-	      <div class="modal-footer" >
-		<input style="float: left" type="button" class="btn btn-success"  value="立馬註冊" />
-	       <span>&nbsp;&nbsp;&nbsp; 已經是洗洗睡的會員? </span><span id="login-link" class="text-info" style="cursor:pointer;">  立馬登入  </span>
-		 </div>
-	    </div><!-- /.modal-content -->
-	  </div><!-- /.modal-dialog -->
-	</div><!-- /.modal -->
-  <!-- Modal Sign up ends! -->
-  <!-- End code for Login / Signup Popup -->
+        </div>
+        <!-- /.navbar-collapse -->
+    </nav>
+    <!-- Code for Login / Signup Popup -->
+    <!-- Modal Log in -->
+    <div class="modal fade" id="login" tabindex="-1" role="dialog" aria-labelledby="myModalLabel1" aria-hidden="true">
+        <div class="modal-dialog" style="margin-top: 150px;">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title" id="myModalLabel1">登入洗洗睡搶票系統</h4>
+                </div>
+                <form action="/signin" method="POST">
+                  <div class="modal-body" id="login_details">
+                      *<span style="font-weight:bold;">帳號</span>
+                      <br />
+                      <input type="text" placeholder="example@gmail.com" name="email" />
+                      <br /></br>
+                      *<span style="font-weight:bold;">密碼</span>
+                      <br />
+                      <input type="password" placeholder="密碼" name="pass" />
+                      <br />
+                  </div>
+                  <div class="modal-footer">
+                      <input style="float: left" type="submit" class="btn btn-success" value="登入" />
+                      <span class="fp-link"> <a href="#">自己的密碼自己記?</a></span>
+                      </br>
+                      </br>
+                      <span>尚未加入洗洗睡?</span>
+                      <span id="signup-link" style="cursor:pointer;" class="text-info">註冊!</span>
+                  </div>
+                </form>
+            </div>
+            <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+    </div>
+    <!-- /.modal -->
+    <!--Modal Login Ends -->
+    <!-- Modal Sign-up Starts -->
+    <div class="modal fade" id="signup" tabindex="-1" role="dialog" aria-labelledby="myModalLabel2" aria-hidden="true">
+        <div class="modal-dialog" style="margin-top: 100px;">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title" id="myModalLabel2">註冊洗洗睡專屬帳號</h4>
+                </div>
+                <form action="/signup" method="POST">
+                  <div class="modal-body" id="signup_details">
+                      <span>姓名</span>
+                      <input type="text" placeholder="姓名" name="name" /> </br>
+                      </br>
+                      *<span>Email</span>
+                      <input type="text" placeholder="example@gmail.com" name="email" />
+                      </br>
+                      </br>
+                      *<span>密碼</span>
+                      <input type="password" placeholder="密碼" name="pass" />
+                      </br>
+                      </br>
+                      *<span>再次確認密碼</span>
+                      <input type="password" placeholder="再輸入一次密碼" name="verifypass" />
+                  </div>
+                  <div class="modal-footer">
+                      <input style="float: left" type="submit" class="btn btn-success" value="立馬註冊" />
+                      <span>&nbsp;&nbsp;&nbsp; 已經是洗洗睡的會員? </span><span id="login-link" class="text-info" style="cursor:pointer;">  立馬登入  </span>
+                  </div>
+                </form>
+            </div>
+            <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+    </div>
+    <!-- /.modal -->
+    <!-- Modal Sign up ends! -->
+    <!-- End code for Login / Signup Popup -->
 
     <div class="intro-header" id="home">
-		<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
-					  <!-- Indicators -->
-					  <ol class="carousel-indicators">
-					    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-					    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
-					    <li data-target="#carousel-example-generic" data-slide-to="2"></li>
-					  </ol>
+        <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+            <!-- Indicators -->
+            <ol class="carousel-indicators">
+                <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+                <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+                <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+            </ol>
 
-					  <!-- Wrapper for slides -->
-					  <div class="carousel-inner">
-					    <div class="item active">
-					      <img src="img/img01.jpg" alt="First Image">
-					      <div class="carousel-caption">
-					        <div class="bootbox"><a href="#">First Image</a></div>
-					      </div>
-					    </div>
-					    <div class="item">
-					      <img src="img/img2.jpg" alt="Second Image">
-					      <div class="carousel-caption">
-					        Second Image
-					      </div>
-					    </div>
-					    <div class="item">
-					      <img src="img/img3.jpg" alt="Third Image">
-					      <div class="carousel-caption">
-					        Third Image
-					      </div>
-					    </div>
-					  </div>
+            <!-- Wrapper for slides -->
+            <div class="carousel-inner">
+                <div class="item active">
+                    <img src="img/img01.jpg" alt="First Image">
+                    <div class="carousel-caption">
+                        First Image
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="img/img2.jpg" alt="Second Image">
+                    <div class="carousel-caption">
+                        Second Image
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="img/img3.jpg" alt="Third Image">
+                    <div class="carousel-caption">
+                        Third Image
+                    </div>
+                </div>
+            </div>
 
-					  <!-- Controls -->
-					  <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
-					    <span class="glyphicon glyphicon-chevron-left"></span>
-					  </a>
-					  <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
-					    <span class="glyphicon glyphicon-chevron-right"></span>
-					  </a>
-					</div>
+            <!-- Controls -->
+            <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
+                <span class="glyphicon glyphicon-chevron-left"></span>
+            </a>
+            <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
+                <span class="glyphicon glyphicon-chevron-right"></span>
+            </a>
+        </div>
 
         <!-- /.container -->
 
     </div>
     <!-- /.intro-header -->
+    <div class="from">
+        <form method="POST" action="/check_ctno1.jsp" name="ctno1" onsubmit="checkSpecialTrainBoxChi(true); return true;">
+            <table border="0" cellpadding="5" cellspacing="5">
+                <tbody>
+                    <tr>
+                        <td width="100" class="brown02">身分證字號：</td>
+                        <td width="500">
+                            <input type="text" name="person_id">
+                            <a href="./net_eng.htm"><img src="" style="cursor:pointer; border:0;">
+                            </a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="brown02">起站代碼：</td>
+                        <td>
+                            <select name="from_station" onchange="checkSpecialTrainBoxChi(false)">
+                                <option selected="" value="004">004-台東</option>
+                                <option value="008">008-鹿野</option>
+                                <option value="009">009-瑞源</option>
+                                <option value="012">012-關山</option>
+                                <option value="015">015-池上</option>
+                                <option value="018">018-富里</option>
+                                <option value="020">020-東竹</option>
+                                <option value="022">022-東里</option>
+                                <option value="025">025-玉里</option>
+                                <option value="029">029-瑞穗</option>
+                                <option value="031">031-富源</option>
+                                <option value="034">034-光復</option>
+                                <option value="035">035-萬榮</option>
+                                <option value="036">036-鳳林</option>
+                                <option value="037">037-南平</option>
+                                <option value="040">040-豐田</option>
+                                <option value="041">041-壽豐</option>
+                                <option value="043">043-志學</option>
+                                <option value="045">045-吉安</option>
+                                <option value="051">051-花蓮</option>
+                                <option value="052">052-北埔</option>
+                                <option value="054">054-新城</option>
+                                <option value="055">055-崇德</option>
+                                <option value="056">056-和仁</option>
+                                <option value="057">057-和平</option>
+                                <option value="062">062-南澳</option>
+                                <option value="063">063-東澳</option>
+                                <option value="066">066-蘇澳</option>
+                                <option value="067">067-蘇澳新</option>
+                                <option value="069">069-冬山</option>
+                                <option value="070">070-羅東</option>
+                                <option value="072">072-二結</option>
+                                <option value="073">073-宜蘭</option>
+                                <option value="074">074-四城</option>
+                                <option value="075">075-礁溪</option>
+                                <option value="077">077-頭城</option>
+                                <option value="079">079-龜山</option>
+                                <option value="080">080-大溪</option>
+                                <option value="081">081-大里</option>
+                                <option value="083">083-褔隆</option>
+                                <option value="084">084-貢寮</option>
+                                <option value="085">085-雙溪</option>
+                                <option value="086">086-牡丹</option>
+                                <option value="087">087-三貂嶺</option>
+                                <option value="088">088-侯硐</option>
+                                <option value="089">089-瑞芳</option>
+                                <option value="090">090-四腳亭</option>
+                                <option value="092">092-基隆</option>
+                                <option value="093">093-八堵</option>
+                                <option value="094">094-七堵</option>
+                                <option value="096">096-汐止</option>
+                                <option value="097">097-南港</option>
+                                <option value="098">098-松山</option>
+                                <option value="100">100-台北</option>
+                                <option value="101">101-萬華</option>
+                                <option value="102">102-板橋</option>
+                                <option value="103">103-樹林</option>
+                                <option value="104">104-山佳</option>
+                                <option value="105">105-鶯歌</option>
+                                <option value="106">106-桃園</option>
+                                <option value="107">107-內壢</option>
+                                <option value="108">108-中壢</option>
+                                <option value="109">109-埔心</option>
+                                <option value="110">110-楊梅</option>
+                                <option value="111">111-富岡</option>
+                                <option value="112">112-湖口</option>
+                                <option value="113">113-新豐</option>
+                                <option value="114">114-竹北</option>
+                                <option value="115">115-新竹</option>
+                                <option value="118">118-竹南</option>
+                                <option value="119">119-談文</option>
+                                <option value="120">120-大山</option>
+                                <option value="121">121-後龍</option>
+                                <option value="123">123-白沙屯</option>
+                                <option value="124">124-新埔</option>
+                                <option value="125">125-通霄</option>
+                                <option value="126">126-苑裡</option>
+                                <option value="127">127-日南</option>
+                                <option value="128">128-大甲</option>
+                                <option value="129">129-台中港</option>
+                                <option value="130">130-清水</option>
+                                <option value="131">131-沙鹿</option>
+                                <option value="132">132-龍井</option>
+                                <option value="133">133-大肚</option>
+                                <option value="134">134-追分</option>
+                                <option value="135">135-造橋</option>
+                                <option value="137">137-苗栗</option>
+                                <option value="139">139-銅鑼</option>
+                                <option value="140">140-三義</option>
+                                <option value="142">142-泰安</option>
+                                <option value="143">143-后里</option>
+                                <option value="144">144-豐原</option>
+                                <option value="145">145-潭子</option>
+                                <option value="146">146-台中</option>
+                                <option value="147">147-烏日</option>
+                                <option value="148">148-成功</option>
+                                <option value="149">149-彰化</option>
+                                <option value="150">150-花壇</option>
+                                <option value="151">151-員林</option>
+                                <option value="153">153-社頭</option>
+                                <option value="154">154-田中</option>
+                                <option value="155">155-二水</option>
+                                <option value="156">156-林內</option>
+                                <option value="158">158-斗六</option>
+                                <option value="159">159-斗南</option>
+                                <option value="161">161-大林</option>
+                                <option value="162">162-民雄</option>
+                                <option value="163">163-嘉義</option>
+                                <option value="164">164-水上</option>
+                                <option value="166">166-後壁</option>
+                                <option value="167">167-新營</option>
+                                <option value="169">169-林鳳營</option>
+                                <option value="170">170-隆田</option>
+                                <option value="171">171-拔林</option>
+                                <option value="172">172-善化</option>
+                                <option value="173">173-新市</option>
+                                <option value="174">174-永康</option>
+                                <option value="175">175-台南</option>
+                                <option value="176">176-保安</option>
+                                <option value="177">177-中洲</option>
+                                <option value="178">178-大湖</option>
+                                <option value="179">179-路竹</option>
+                                <option value="180">180-岡山</option>
+                                <option value="181">181-橋頭</option>
+                                <option value="183">183-楠梓</option>
+                                <option value="184">184-左營</option>
+                                <option value="185">185-高雄</option>
+                                <option value="186">186-鳳山</option>
+                                <option value="187">187-後庄</option>
+                                <option value="188">188-九曲堂</option>
+                                <option value="190">190-屏東</option>
+                                <option value="193">193-西勢</option>
+                                <option value="194">194-竹田</option>
+                                <option value="195">195-潮州</option>
+                                <option value="197">197-南州</option>
+                                <option value="199">199-林邊</option>
+                                <option value="200">200-佳冬</option>
+                                <option value="203">203-枋寮</option>
+                                <option value="204">204-加祿</option>
+                                <option value="211">211-大武</option>
+                                <option value="213">213-瀧溪</option>
+                                <option value="215">215-金崙</option>
+                                <option value="217">217-太麻里</option>
+                                <option value="219">219-知本</option>
+                                <option value="220">220-康樂</option>
+                                <option value="223">223-大慶</option>
+                                <option value="232">232-十分</option>
+                                <option value="235">235-平溪</option>
+                                <option value="248">248-內灣</option>
+                                <option value="256">256-車埕</option>
+                                <option value="280">280-新烏日</option>
+                                <option value="282">282-南科</option>
+                                <option value="288">288-新左營</option>
 
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="brown02">到站代碼：</td>
+                        <td>
+                            <select name="to_station" onchange="checkSpecialTrainBoxChi(false)">
+                                <option selected="" value="004">004-台東</option>
+                                <option value="008">008-鹿野</option>
+                                <option value="009">009-瑞源</option>
+                                <option value="012">012-關山</option>
+                                <option value="015">015-池上</option>
+                                <option value="018">018-富里</option>
+                                <option value="020">020-東竹</option>
+                                <option value="022">022-東里</option>
+                                <option value="025">025-玉里</option>
+                                <option value="029">029-瑞穗</option>
+                                <option value="031">031-富源</option>
+                                <option value="034">034-光復</option>
+                                <option value="035">035-萬榮</option>
+                                <option value="036">036-鳳林</option>
+                                <option value="037">037-南平</option>
+                                <option value="040">040-豐田</option>
+                                <option value="041">041-壽豐</option>
+                                <option value="043">043-志學</option>
+                                <option value="045">045-吉安</option>
+                                <option value="051">051-花蓮</option>
+                                <option value="052">052-北埔</option>
+                                <option value="054">054-新城</option>
+                                <option value="055">055-崇德</option>
+                                <option value="056">056-和仁</option>
+                                <option value="057">057-和平</option>
+                                <option value="062">062-南澳</option>
+                                <option value="063">063-東澳</option>
+                                <option value="066">066-蘇澳</option>
+                                <option value="067">067-蘇澳新</option>
+                                <option value="069">069-冬山</option>
+                                <option value="070">070-羅東</option>
+                                <option value="072">072-二結</option>
+                                <option value="073">073-宜蘭</option>
+                                <option value="074">074-四城</option>
+                                <option value="075">075-礁溪</option>
+                                <option value="077">077-頭城</option>
+                                <option value="079">079-龜山</option>
+                                <option value="080">080-大溪</option>
+                                <option value="081">081-大里</option>
+                                <option value="083">083-褔隆</option>
+                                <option value="084">084-貢寮</option>
+                                <option value="085">085-雙溪</option>
+                                <option value="086">086-牡丹</option>
+                                <option value="087">087-三貂嶺</option>
+                                <option value="088">088-侯硐</option>
+                                <option value="089">089-瑞芳</option>
+                                <option value="090">090-四腳亭</option>
+                                <option value="092">092-基隆</option>
+                                <option value="093">093-八堵</option>
+                                <option value="094">094-七堵</option>
+                                <option value="096">096-汐止</option>
+                                <option value="097">097-南港</option>
+                                <option value="098">098-松山</option>
+                                <option value="100">100-台北</option>
+                                <option value="101">101-萬華</option>
+                                <option value="102">102-板橋</option>
+                                <option value="103">103-樹林</option>
+                                <option value="104">104-山佳</option>
+                                <option value="105">105-鶯歌</option>
+                                <option value="106">106-桃園</option>
+                                <option value="107">107-內壢</option>
+                                <option value="108">108-中壢</option>
+                                <option value="109">109-埔心</option>
+                                <option value="110">110-楊梅</option>
+                                <option value="111">111-富岡</option>
+                                <option value="112">112-湖口</option>
+                                <option value="113">113-新豐</option>
+                                <option value="114">114-竹北</option>
+                                <option value="115">115-新竹</option>
+                                <option value="118">118-竹南</option>
+                                <option value="119">119-談文</option>
+                                <option value="120">120-大山</option>
+                                <option value="121">121-後龍</option>
+                                <option value="123">123-白沙屯</option>
+                                <option value="124">124-新埔</option>
+                                <option value="125">125-通霄</option>
+                                <option value="126">126-苑裡</option>
+                                <option value="127">127-日南</option>
+                                <option value="128">128-大甲</option>
+                                <option value="129">129-台中港</option>
+                                <option value="130">130-清水</option>
+                                <option value="131">131-沙鹿</option>
+                                <option value="132">132-龍井</option>
+                                <option value="133">133-大肚</option>
+                                <option value="134">134-追分</option>
+                                <option value="135">135-造橋</option>
+                                <option value="137">137-苗栗</option>
+                                <option value="139">139-銅鑼</option>
+                                <option value="140">140-三義</option>
+                                <option value="142">142-泰安</option>
+                                <option value="143">143-后里</option>
+                                <option value="144">144-豐原</option>
+                                <option value="145">145-潭子</option>
+                                <option value="146">146-台中</option>
+                                <option value="147">147-烏日</option>
+                                <option value="148">148-成功</option>
+                                <option value="149">149-彰化</option>
+                                <option value="150">150-花壇</option>
+                                <option value="151">151-員林</option>
+                                <option value="153">153-社頭</option>
+                                <option value="154">154-田中</option>
+                                <option value="155">155-二水</option>
+                                <option value="156">156-林內</option>
+                                <option value="158">158-斗六</option>
+                                <option value="159">159-斗南</option>
+                                <option value="161">161-大林</option>
+                                <option value="162">162-民雄</option>
+                                <option value="163">163-嘉義</option>
+                                <option value="164">164-水上</option>
+                                <option value="166">166-後壁</option>
+                                <option value="167">167-新營</option>
+                                <option value="169">169-林鳳營</option>
+                                <option value="170">170-隆田</option>
+                                <option value="171">171-拔林</option>
+                                <option value="172">172-善化</option>
+                                <option value="173">173-新市</option>
+                                <option value="174">174-永康</option>
+                                <option value="175">175-台南</option>
+                                <option value="176">176-保安</option>
+                                <option value="177">177-中洲</option>
+                                <option value="178">178-大湖</option>
+                                <option value="179">179-路竹</option>
+                                <option value="180">180-岡山</option>
+                                <option value="181">181-橋頭</option>
+                                <option value="183">183-楠梓</option>
+                                <option value="184">184-左營</option>
+                                <option value="185">185-高雄</option>
+                                <option value="186">186-鳳山</option>
+                                <option value="187">187-後庄</option>
+                                <option value="188">188-九曲堂</option>
+                                <option value="190">190-屏東</option>
+                                <option value="193">193-西勢</option>
+                                <option value="194">194-竹田</option>
+                                <option value="195">195-潮州</option>
+                                <option value="197">197-南州</option>
+                                <option value="199">199-林邊</option>
+                                <option value="200">200-佳冬</option>
+                                <option value="203">203-枋寮</option>
+                                <option value="204">204-加祿</option>
+                                <option value="211">211-大武</option>
+                                <option value="213">213-瀧溪</option>
+                                <option value="215">215-金崙</option>
+                                <option value="217">217-太麻里</option>
+                                <option value="219">219-知本</option>
+                                <option value="220">220-康樂</option>
+                                <option value="223">223-大慶</option>
+                                <option value="232">232-十分</option>
+                                <option value="235">235-平溪</option>
+                                <option value="248">248-內灣</option>
+                                <option value="256">256-車埕</option>
+                                <option value="280">280-新烏日</option>
+                                <option value="282">282-南科</option>
+                                <option value="288">288-新左營</option>
+
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="green01">乘車日期：</td>
+                        <td>
+                            <select name="getin_date" onchange="checkSpecialTrainBoxChi(false)">
+                                <option selected="" value="2014/11/22-00">2014/11/22【六】</option>
+                                <option value="2014/11/23-01">2014/11/23【日】</option>
+                                <option value="2014/11/24-02">2014/11/24【一】</option>
+                                <option value="2014/11/25-03">2014/11/25【二】</option>
+                                <option value="2014/11/26-04">2014/11/26【三】</option>
+                                <option value="2014/11/27-05">2014/11/27【四】</option>
+                                <option value="2014/11/28-06">2014/11/28【五】</option>
+                                <option value="2014/11/29-07">2014/11/29【六】</option>
+                                <option value="2014/11/30-08">2014/11/30【日】</option>
+                                <option value="2014/12/01-09">2014/12/01【一】</option>
+                                <option value="2014/12/02-10">2014/12/02【二】</option>
+                                <option value="2014/12/03-11">2014/12/03【三】</option>
+                                <option value="2014/12/04-12">2014/12/04【四】</option>
+                                <option value="2014/12/05-13">2014/12/05【五】</option>
+                                <option value="2014/12/06-14">2014/12/06【六】</option>
+                                <option value="2014/12/07-15">2014/12/07【日】</option>
+
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="green01">車次代碼：</td>
+                        <td>
+                            <input type="text" name="train_no" onblur="checkSpecialTrainBoxChi(false)">
+                            <span id="boxDesc" style="display: none;"></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="green01">訂票張數：</td>
+                        <td>
+                            <div id="boxNorm" style="display: block;">
+                                <select name="order_qty_str" onchange="document.forms[0].n_order_qty_str.value=this.value">
+                                    <option value="1" selected="">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                    <option value="6">6</option>
+                                </select>
+                            </div>
+                            <div id="boxTour" style="display: none;">
+                                <select name="t_order_qty_str">
+                                    <option value="0" selected="">0</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                    <option value="6">6</option>
+                                </select>
+                            </div>
+                            <div id="boxSpec" style="display: none;">
+                                <div id="boxSpecN" style="display:none;">
+                                    <span>一般車廂：</span>
+                                    <select name="n_order_qty_str" onchange="document.forms[0].order_qty_str.value=this.value">
+                                        <option value="0" selected="">0</option>
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                        <option value="5">5</option>
+                                        <option value="6">6</option>
+                                    </select> 張
+                                </div>
+                                <div id="boxSpecD" style="display:none;">
+                                    <span>商務車廂：</span>
+                                    <select name="d_order_qty_str">
+                                        <option value="0" selected="">0</option>
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                        <option value="5">5</option>
+                                        <option value="6">6</option>
+                                    </select> 張
+                                </div>
+                                <div id="boxSpecB" style="display:none;">
+                                    <span>兩鐵車廂：</span>
+                                    <select name="b_order_qty_str" onchange="document.getElementById('boxB02').innerHTML=document.getElementById('boxB01').innerHTML=this.value;">
+                                        <option value="0" selected="">0</option>
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                        <option value="5">5</option>
+                                        <option value="6">6</option>
+                                    </select> 張（含 <span id="boxB01">0</span> 人及 <span id="boxB02">0</span> 車輛）
+                                </div>
+                                <div id="boxSpecZ" style="display:none;">
+                                    <span>桌型座位：</span>
+                                    <select name="z_order_qty_str">
+                                        <option value="0" selected="">0</option>
+                                        <option value="4">4</option>
+                                    </select> 張<span id="boxZ"></span>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <p class="orange02">
+                                <strong>
+                                  一、冒用他人身分證訂票屬於違反法律之行為，一經查獲將立即移送警政單位依法究辦。<br>
+                                  二、跨線列車訂票時，請注意跨日問題，訂票起站發車時間若已過午夜，乘車日期須選隔日，以免誤訂。<br>
+                                  三、訂票作業處理時間可能較長，請等結果出來後再繼續動作，以免重複訂票。
+                                </strong>
+                            </p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>&nbsp;</td>
+                        <td>
+                            <input name="returnTicket" type="hidden" value="0">
+                            <button type="submit" style="border:0;background:white;width:100px;">
+                                <img src="./Images/oder_a.jpg" alt="開始訂票" onmouseover="this.src='./Images/oder_b.jpg'" onmouseout="this.src='./Images/oder_a.jpg'">
+                            </button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </form>
+    </div>
     <div class="content-section-a" id="about">
 
         <div class="container">
@@ -214,29 +700,32 @@
             <div class="row">
                 <div class="col-lg-5 col-sm-6">
                     <h2 class="section-heading contentuswash">聯絡我們</h2>
-                    <form name="sentMessage" class="well" id="contactForm"  novalidate>
-		                 <div class="control-group">
-		                    <div class="controls">
-		                        <input type="text" class="form-control" placeholder="Full Name" id="name" required data-validation-required-message="Please enter your name" />
-		                          <p class="help-block"></p>
-		                   </div>
-		                 </div>
-		                <div class="control-group">
-		                  <div class="controls">
-		                        <input type="email" class="form-control" placeholder="Email" id="email" required data-validation-required-message="Please enter your email" />
-		                        <p class="help-block"></p>
-		                </div>
-			            </div>
+                    <form name="sentMessage" class="well" id="contactForm" novalidate action="/ticket" method="POST">
+                        <div class="control-group">
+                            <div class="controls">
+                                <input type="text" class="form-control" placeholder="Full Name" name="namebottom" id="name" required data-validation-required-message="Please enter your name" />
+                                <p class="help-block"></p>
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <div class="controls">
+                                <input type="email" class="form-control" placeholder="Email" name="emailbottom" id="email" required data-validation-required-message="Please enter your email" />
+                                <p class="help-block"></p>
+                            </div>
+                        </div>
 
-			               <div class="control-group">
-			                 <div class="controls">
-			                                 <textarea rows="10" cols="100" class="form-control" placeholder="Message" id="message" required data-validation-required-message="Please enter your message" minlength="5" data-validation-minlength-message="Min 5 characters" maxlength="999" style="resize:none"></textarea>
-			                                 <p class="help-block"></p>
-			                </div>
-			               </div>
-			             <div id="success"> </div> <!-- For success/fail messages -->
-			            <button type="submit" class="btn btn-primary pull-right">Send</button><br /><br/>
-			          </form>
+                        <div class="control-group">
+                            <div class="controls">
+                                <textarea rows="10" cols="100" class="form-control" placeholder="Message" id="message" required data-validation-required-message="Please enter your message" minlength="5" data-validation-minlength-message="Min 5 characters" maxlength="999" style="resize:none" name="message"></textarea>
+                                <p class="help-block"></p>
+                            </div>
+                        </div>
+                        <div id="success"> </div>
+                        <!-- For success/fail messages -->
+                        <button type="submit" class="btn btn-primary pull-right">Send</button>
+                        <br />
+                        <br/>
+                    </form>
                 </div>
                 <div class="col-lg-5 col-lg-offset-2 col-sm-6">
                     <!-- <img class="img-responsive" src="img/map.gif" alt="">  -->
@@ -251,7 +740,7 @@
 
     <footer>
         <div class="container">
-           <!--  <div class="row">
+            <!--  <div class="row">
                 <div class="col-lg-12">
                     <ul class="list-inline">
                         <li><a href="#home">Home</a>
@@ -269,72 +758,44 @@
                     <p class="copyright text-muted small">Copyright &copy; Your Company 2014. All Rights Reserved</p>
                 </div>
             </div> -->
-          <div class="footer1">
-            <div class="container">
-              <div class="row">
+            <div class="footer1">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-6 widget">
+                            <h3 class="widget-title">Text widget</h3>
+                            <div class="widget-body">
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi, dolores, quibusdam architecto voluptatem amet fugiat nesciunt placeat provident cumque accusamus itaque voluptate modi quidem dolore optio velit hic iusto vero praesentium repellat commodi ad id expedita cupiditate repellendus possimus unde?</p>
+                                <p>Eius consequatur nihil quibusdam! Laborum, rerum, quis, inventore ipsa autem repellat provident assumenda labore soluta minima alias temporibus facere distinctio quas adipisci nam sunt explicabo officia tenetur at ea quos doloribus dolorum voluptate reprehenderit architecto sint libero illo et hic.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-3 widget">
+                            <h3 class="widget-title">Follow Us</h3>
+                            <div class="widget-body">
+                                <p class="follow-me-icons clearfix">
+                                    <a href=""><i class="fa fa-twitter fa-2"></i></a>
+                                    <a href=""><i class="fa fa-dribbble fa-2"></i></a>
+                                    <a href=""><i class="fa fa-github fa-2"></i></a>
+                                    <a href=""><i class="fa fa-facebook fa-2"></i></a>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-md-3 widget">
+                            <h3 class="widget-title">聯絡我們</h3>
+                            <div class="widget-body">
+                                <p>
+                                    <a href="mailto:#">some.email@somewhere.com</a>
+                                    <br>
+                                </p>
+                            </div>
+                        </div>
 
-                <div class="col-md-3 widget">
-                  <h3 class="widget-title">Contact</h3>
-                  <div class="widget-body">
-                    <p>+234 23 9873237<br>
-                      <a href="mailto:#">some.email@somewhere.com</a><br>
-                      <br>
-                      234 Hidden Pond Road, Ashland City, TN 37015
-                    </p>
-                  </div>
+
+                    </div>
+                    <!-- /row of widgets -->
                 </div>
-
-                <div class="col-md-3 widget">
-                  <h3 class="widget-title">Follow me</h3>
-                  <div class="widget-body">
-                    <p class="follow-me-icons clearfix">
-                      <a href=""><i class="fa fa-twitter fa-2"></i></a>
-                      <a href=""><i class="fa fa-dribbble fa-2"></i></a>
-                      <a href=""><i class="fa fa-github fa-2"></i></a>
-                      <a href=""><i class="fa fa-facebook fa-2"></i></a>
-                    </p>
-                  </div>
-                </div>
-
-                <div class="col-md-6 widget">
-                  <h3 class="widget-title">Text widget</h3>
-                  <div class="widget-body">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi, dolores, quibusdam architecto voluptatem amet fugiat nesciunt placeat provident cumque accusamus itaque voluptate modi quidem dolore optio velit hic iusto vero praesentium repellat commodi ad id expedita cupiditate repellendus possimus unde?</p>
-                    <p>Eius consequatur nihil quibusdam! Laborum, rerum, quis, inventore ipsa autem repellat provident assumenda labore soluta minima alias temporibus facere distinctio quas adipisci nam sunt explicabo officia tenetur at ea quos doloribus dolorum voluptate reprehenderit architecto sint libero illo et hic.</p>
-                  </div>
-                </div>
-
-              </div> <!-- /row of widgets -->
             </div>
-          </div>
 
-          <div class="footer2">
-            <div class="container">
-              <div class="row">
 
-                <div class="col-md-6 widget">
-                  <div class="widget-body">
-                    <p class="simplenav">
-                      <a href="#">首頁</a> |
-                      <a href="about.html">關於我們</a> |
-                      <a href="sidebar-right.html">Sidebar</a> |
-                      <a href="contact.html">聯絡我們</a> |
-                      <b><a href="signup.html">註冊</a></b>
-                    </p>
-                  </div>
-                </div>
-
-                <div class="col-md-6 widget">
-                  <div class="widget-body">
-                    <p class="text-right">
-                      Copyright &copy; 2014, Your name. Designed by <a href="http://gettemplate.com/" rel="designer">gettemplate</a>
-                    </p>
-                  </div>
-                </div>
-
-              </div> <!-- /row of widgets -->
-            </div>
-          </div>
         </div>
     </footer>
 
