@@ -124,7 +124,13 @@
                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                     <h4 class="modal-title" id="myModalLabel2">註冊洗洗睡專屬帳號</h4>
                 </div>
+                {% if insert %}
+                    <script>
+                        $(function(){alert('{{insert}}');$('#signup-link').click();})
+                    </script>
+                {% endif %}
                 <form action="/signup" method="POST">
+                  <p style="color:red">{{insert}}</p>
                   <div class="modal-body" id="signup_details">
                       <span>姓名</span>
                       <input type="text" placeholder="姓名" name="name" /> </br>
