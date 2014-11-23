@@ -57,10 +57,8 @@
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">{{ user }}<b class="caret"></b></a>
                     <ul class="dropdown-menu">
-                        <li><a href="#">我的個人資訊</a>
-                        </li>
                         <li class="divider"></li>
-                        <li><a href="/logout">登出</a>
+                        <li><a href="/logout">還不去洗洗睡</a>
                         </li>
                     </ul>
                 </li>
@@ -86,12 +84,18 @@
                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                     <h4 class="modal-title" id="myModalLabel1">登入洗洗睡搶票系統</h4>
                 </div>
+                {% if faillogin %}
+                    <script>
+                        $(function(){alert('{{faillogin}}');$('#loginpopup').click();})
+                    </script>
+                {% endif %}
                 <form action="/signin" method="POST">
                   <div class="modal-body" id="login_details">
+                      <p style="color:red;">{{faillogin}}</p>
                       *<span style="font-weight:bold;">帳號</span>
                       <br />
                       <input type="text" placeholder="example@gmail.com" name="email" />
-                      <br /></br>
+                      <br/>
                       *<span style="font-weight:bold;">密碼</span>
                       <br />
                       <input type="password" placeholder="密碼" name="pass" />

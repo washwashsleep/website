@@ -5,7 +5,7 @@ var db = require('../models/mongo');
 module.exports.index = function(req, res) {
   console.log('我是首頁')
   console.log(req.session)
-  if(req.session.faillogin === true){
+  if(req.session.faillogin == true){
     req.session.faillogin = '帳號或密碼錯誤'
   }else{
     req.session.faillogin = null
