@@ -36,7 +36,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#"><img src="./img/logo.png" width="30px" style="margin-right:15px">洗洗睡搶票系統</a>
+            <a class="navbar-brand" href="#"><img src="./img/logo.png" width="20px" style="margin-right:15px">洗洗睡搶票系統</a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
@@ -211,7 +211,7 @@
                     <tr>
                         <td width="100" class="brown02">身分證字號：</td>
                         <td width="500">
-                            <input type="text" name="person_id">
+                            <input type="text" name="person_id" class="form-control">
                             <a href="./net_eng.htm"><img src="" style="cursor:pointer; border:0;">
                             </a>
                         </td>
@@ -219,7 +219,7 @@
                     <tr>
                         <td class="brown02">起站代碼：</td>
                         <td>
-                            <select name="from_station" onchange="checkSpecialTrainBoxChi(false)">
+                            <select name="from_station" onchange="checkSpecialTrainBoxChi(false)" class="btn btn-default dropdown-toggle">
                                 <option selected="" value="004">004-台東</option>
                                 <option value="008">008-鹿野</option>
                                 <option value="009">009-瑞源</option>
@@ -380,7 +380,7 @@
                     <tr>
                         <td class="brown02">到站代碼：</td>
                         <td>
-                            <select name="to_station" onchange="checkSpecialTrainBoxChi(false)">
+                            <select name="to_station" onchange="checkSpecialTrainBoxChi(false)" class="btn btn-default dropdown-toggle">
                                 <option selected="" value="004">004-台東</option>
                                 <option value="008">008-鹿野</option>
                                 <option value="009">009-瑞源</option>
@@ -541,7 +541,7 @@
                     <tr>
                         <td class="green01">乘車日期：</td>
                         <td>
-                            <select name="getin_date" onchange="checkSpecialTrainBoxChi(false)">
+                            <select name="getin_date" onchange="checkSpecialTrainBoxChi(false)" class="btn btn-default dropdown-toggle">
                                 <option selected="" value="2014/11/22-00">2014/11/22【六】</option>
                                 <option value="2014/11/23-01">2014/11/23【日】</option>
                                 <option value="2014/11/24-02">2014/11/24【一】</option>
@@ -565,7 +565,7 @@
                     <tr>
                         <td class="green01">車次代碼：</td>
                         <td>
-                            <input type="text" name="train_no" onblur="checkSpecialTrainBoxChi(false)">
+                            <input type="text" name="train_no" onblur="checkSpecialTrainBoxChi(false)" class="form-control">
                             <span id="boxDesc" style="display: none;"></span>
                         </td>
                     </tr>
@@ -573,7 +573,7 @@
                         <td class="green01">訂票張數：</td>
                         <td>
                             <div id="boxNorm" style="display: block;">
-                                <select name="order_qty_str" onchange="document.forms[0].n_order_qty_str.value=this.value">
+                                <select name="order_qty_str" onchange="document.forms[0].n_order_qty_str.value=this.value" class="btn btn-default dropdown-toggle">
                                     <option value="1" selected="">1</option>
                                     <option value="2">2</option>
                                     <option value="3">3</option>
@@ -583,7 +583,7 @@
                                 </select>
                             </div>
                             <div id="boxTour" style="display: none;">
-                                <select name="t_order_qty_str">
+                                <select name="t_order_qty_str" class="btn btn-default dropdown-toggle">
                                     <option value="0" selected="">0</option>
                                     <option value="1">1</option>
                                     <option value="2">2</option>
@@ -593,10 +593,10 @@
                                     <option value="6">6</option>
                                 </select>
                             </div>
-                            <div id="boxSpec" style="display: none;">
+                            <div id="boxSpec" style="">
                                 <div id="boxSpecN" style="display:none;">
                                     <span>一般車廂：</span>
-                                    <select name="n_order_qty_str" onchange="document.forms[0].order_qty_str.value=this.value">
+                                    <select name="n_order_qty_str" onchange="document.forms[0].order_qty_str.value=this.value" class="btn btn-default dropdown-toggle">
                                         <option value="0" selected="">0</option>
                                         <option value="1">1</option>
                                         <option value="2">2</option>
@@ -606,9 +606,9 @@
                                         <option value="6">6</option>
                                     </select> 張
                                 </div>
-                                <div id="boxSpecD" style="display:none;">
+                                <div id="boxSpecD" style="">
                                     <span>商務車廂：</span>
-                                    <select name="d_order_qty_str">
+                                    <select name="d_order_qty_str" class="btn btn-default dropdown-toggle">
                                         <option value="0" selected="">0</option>
                                         <option value="1">1</option>
                                         <option value="2">2</option>
@@ -618,9 +618,9 @@
                                         <option value="6">6</option>
                                     </select> 張
                                 </div>
-                                <div id="boxSpecB" style="display:none;">
+                                <div id="boxSpecB" style="">
                                     <span>兩鐵車廂：</span>
-                                    <select name="b_order_qty_str" onchange="document.getElementById('boxB02').innerHTML=document.getElementById('boxB01').innerHTML=this.value;">
+                                    <select name="b_order_qty_str" onchange="document.getElementById('boxB02').innerHTML=document.getElementById('boxB01').innerHTML=this.value;" class="btn btn-default dropdown-toggle">
                                         <option value="0" selected="">0</option>
                                         <option value="1">1</option>
                                         <option value="2">2</option>
@@ -630,9 +630,9 @@
                                         <option value="6">6</option>
                                     </select> 張（含 <span id="boxB01">0</span> 人及 <span id="boxB02">0</span> 車輛）
                                 </div>
-                                <div id="boxSpecZ" style="display:none;">
+                                <div id="boxSpecZ" style="">
                                     <span>桌型座位：</span>
-                                    <select name="z_order_qty_str">
+                                    <select name="z_order_qty_str" class="btn btn-default dropdown-toggle">
                                         <option value="0" selected="">0</option>
                                         <option value="4">4</option>
                                     </select> 張<span id="boxZ"></span>
@@ -655,8 +655,13 @@
                         <td>&nbsp;</td>
                         <td>
                             <input name="returnTicket" type="hidden" value="0">
-                            <button type="submit" style="border:0;background:white;width:100px;">
-                                <img src="./Images/oder_a.jpg" alt="開始訂票" onmouseover="this.src='./Images/oder_b.jpg'" onmouseout="this.src='./Images/oder_a.jpg'">
+                            <button type="submit" style="border: 0;
+background: rgb(40, 191, 215);
+font-size: 16px;
+width: 100px;
+border-radius: 7px;
+line-height: 20px;color:#fff">
+                               搶票
                             </button>
                         </td>
                     </tr>
@@ -774,10 +779,9 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-md-6 widget">
-                            <h3 class="widget-title">Text widget</h3>
+                            <h3 class="widget-title">洗洗睡的理念</h3>
                             <div class="widget-body">
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi, dolores, quibusdam architecto voluptatem amet fugiat nesciunt placeat provident cumque accusamus itaque voluptate modi quidem dolore optio velit hic iusto vero praesentium repellat commodi ad id expedita cupiditate repellendus possimus unde?</p>
-                                <p>Eius consequatur nihil quibusdam! Laborum, rerum, quis, inventore ipsa autem repellat provident assumenda labore soluta minima alias temporibus facere distinctio quas adipisci nam sunt explicabo officia tenetur at ea quos doloribus dolorum voluptate reprehenderit architecto sint libero illo et hic.</p>
+                                <p>洗洗睡還是洗洗睡 吃飽睡 睡飽吃洗洗睡還是洗洗睡 吃飽睡 睡飽吃洗洗睡還是洗洗睡 吃飽睡 睡飽吃洗洗睡還是洗洗睡 吃飽睡 睡飽吃洗洗睡還是洗洗睡 吃飽睡 睡飽吃洗洗睡還是洗洗睡 吃飽睡 睡飽吃洗洗睡還是洗洗睡 吃飽睡 睡飽吃洗洗睡還是洗洗睡 吃飽睡 睡飽吃</p>
                             </div>
                         </div>
                         <div class="col-md-3 widget">
@@ -795,7 +799,7 @@
                             <h3 class="widget-title">聯絡我們</h3>
                             <div class="widget-body">
                                 <p>
-                                    <a href="mailto:#">some.email@somewhere.com</a>
+                                    <a href="mailto:#">washwashsleep@sleep.com</a>
                                     <br>
                                 </p>
                             </div>
