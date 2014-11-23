@@ -3,17 +3,30 @@ var router = express.Router();
 var db = require('../models/mongo');
 
 module.exports.index = function(req, res) {
-  res.render('index', { title: 'Express' });
+  console.log('我是首頁')
+  console.log(req.session)
+  if(req.session.faillogin === true){
+    req.session.faillogin = '帳號或密碼錯誤'
+  }else{
+    req.session.faillogin = null
+  }
+  if(!req.session.username)
+    req.session.username = null;
+  res.render('index', { title: 'Express', user: req.session.username, faillogin: req.session.faillogin});
 };
 module.exports.signin = function(req, res) {
   console.log(req.body)
-  db.user.findOne({ pass:req.body.pass, $or:[{email:req.body.email},{email:req.body.name}] }, function (err, data){
-    // console.log(err)
-    req.body.session = req.body.name
-    console.dir(data)
+  db.user.findOne({ pass:req.body.pass, $or:[{email:req.body.email},{name:req.body.email}] }, function (err, data){
+    if(!data){
+      req.session.faillogin = true
+      res.redirect('/')
+    }else{
+      req.session.faillogin = false
+      req.session.username = data.email
+      res.redirect('/')
+    }
   })
   // res.render('index', { title: 'Express' });
-  res.redirect('/')
 };
 module.exports.signup = function(req, res) {
   if (req.body.pass === req.body.verifypass ){
@@ -41,6 +54,10 @@ module.exports.ticket = function(req, res) {
       console.error(err)
     console.log(data)
   })
+  res.redirect('/')
+};
+module.exports.logout = function(req, res) {
+  req.session.destroy();
   res.redirect('/')
 };
 

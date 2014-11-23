@@ -7,6 +7,7 @@ var bodyParser = require('body-parser');
 var swig = require('swig');
 var multipart = require('connect-multiparty');
 var multipartMiddleware = multipart();
+var expressSession = require('express-session');
 
 var main = require('./routes/main');
 
@@ -25,9 +26,11 @@ app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cookieParser());
+app.use(expressSession({secret: 'washwashsleep'}));
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.all('/', main.index);
+app.all('/logout', main.logout);
 app.all('/signup', multipartMiddleware, main.signup);
 app.all('/signin', multipartMiddleware, main.signin);
 app.all('/ticket', multipartMiddleware, main.ticket);
