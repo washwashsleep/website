@@ -98,7 +98,7 @@
                       <p style="color:red;">{{faillogin}}</p>
                       *<span style="font-weight:bold;">帳號</span>
                       <br />
-                      <input type="text" placeholder="example@gmail.com" name="email" />
+                      <input type="text" placeholder="example@gmail.com" name="email" required />
                       <br/>
                       *<span style="font-weight:bold;">密碼</span>
                       <br />
@@ -138,18 +138,18 @@
                   <p style="color:red">{{insert}}</p>
                   <div class="modal-body" id="signup_details">
                       <span>姓名</span>
-                      <input type="text" placeholder="姓名" name="name" /> </br>
+                      <input type="text" placeholder="姓名" name="name" required/> </br>
                       </br>
                       *<span>Email</span>
-                      <input type="text" placeholder="example@gmail.com" name="email" />
+                      <input type="email" placeholder="example@gmail.com" name="email" required/>
                       </br>
                       </br>
                       *<span>密碼</span>
-                      <input type="password" placeholder="密碼" name="pass" />
+                      <input type="password" placeholder="密碼" name="pass" required/>
                       </br>
                       </br>
                       *<span>再次確認密碼</span>
-                      <input type="password" placeholder="再輸入一次密碼" name="verifypass" />
+                      <input type="password" placeholder="再輸入一次密碼" name="verifypass" required/>
                   </div>
                   <div class="modal-footer">
                       <input style="float: left" type="submit" class="btn btn-success" value="立馬註冊" />
